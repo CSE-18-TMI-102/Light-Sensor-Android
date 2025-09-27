@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Neo-Brutalist Color Palette -->
+    <color name="brutal_black">#000000</color>
+    <color name="brutal_white">#FFFFFF</color>
+    <color name="brutal_red">#FF0000</color>
+    <color name="brutal_green">#00FF00</color>
+    <color name="brutal_yellow">#FFFF00</color>
+    <color name="brutal_blue">#0000FF</color>
+    <color name="brutal_orange">#FF8800</color>
+    
+    <!-- Status Colors -->
+    <color name="status_off">#FF0000</color>
+    <color name="status_on">#00FF00</color>
+    <color name="status_flicker">#FFFF00</color>
+    
+    <!-- Background Colors -->
+    <color name="bg_primary">#FFFFFF</color>
+    <color name="bg_secondary">#F0F0F0</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#FFFFFF</color>
+</resources>
