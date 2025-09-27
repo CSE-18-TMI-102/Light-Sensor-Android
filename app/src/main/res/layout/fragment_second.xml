@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- File: app/src/main/res/layout/fragment_second.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_primary"
     android:orientation="vertical"
-    android:padding="24dp"
+    android:padding="16dp"
     tools:context=".SecondFragment">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/title_text"
+    <!-- Title Card -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/brutal_card_background"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/soft_card_background"
         android:gravity="center"
-        android:padding="16dp"
-        android:text="STREET LIGHT\nMONITOR"
-        android:textColor="@color/text_primary"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live Status Monitor"
+            style="@style/SoftTitle" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Real-time street light monitoring"
+            style="@style/SoftSubtitle" />
+
+    </LinearLayout>
 
     <!-- Status Label -->
     <TextView
@@ -31,150 +41,82 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center"
-        android:text="CURRENT STATUS"
-        android:textColor="@color/text_primary"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:text="Current Status"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium" />
 
     <!-- Main Status Card -->
     <LinearLayout
         android:id="@+id/status_card"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/brutal_card_background"
+        android:layout_height="156dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/soft_card_background"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="32dp">
 
         <TextView
             android:id="@+id/status_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
             android:gravity="center"
-            android:text="LOADING..."
+            android:text="Loading..."
             android:textColor="@color/text_primary"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:textSize="42sp" />
 
     </LinearLayout>
 
-    <!-- Last Update Info -->
-    <TextView
-        android:id="@+id/last_update_text"
+    <!-- Last Update Card -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/brutal_card_background"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="LAST UPDATE: --:--\nLIGHT LEVEL: ---"
-        android:textColor="@color/text_primary"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/soft_card_background"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Last Update"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:id="@+id/last_update_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connecting to sensor..."
+            style="@style/SoftBody" />
+
+    </LinearLayout>
 
     <!-- Button Container -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
 
-        <!-- Refresh Button -->
         <Button
             android:id="@+id/refresh_button"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:background="@drawable/brutal_button_primary"
-            android:text="REFRESH"
-            android:textColor="@color/text_secondary"
+            android:background="@drawable/soft_button_primary"
+            android:text="Refresh"
+            android:textColor="@color/text_on_primary"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <!-- Test Notification Button -->
-        <Button
-            android:id="@+id/test_notification_button"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/brutal_button_secondary"
-            android:text="TEST ALERT"
-            android:textColor="@color/text_secondary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:fontFamily="sans-serif-medium" />
 
     </LinearLayout>
 
-    <!-- Status Legend -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/brutal_card_background"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="STATUS LEGEND"
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/brutal_button_off"
-                android:gravity="center"
-                android:text="OFF"
-                android:textColor="@color/brutal_black"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/brutal_button_on"
-                android:gravity="center"
-                android:text="ON"
-                android:textColor="@color/brutal_black"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/brutal_button_flicker"
-                android:gravity="center"
-                android:text="FLICKER"
-                android:textColor="@color/brutal_black"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    <!-- Status Legend Card -->
 
 </LinearLayout>

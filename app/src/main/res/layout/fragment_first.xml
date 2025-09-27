@@ -10,105 +10,122 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="16dp">
 
-        <!-- Title -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/brutal_card_background"
-            android:gravity="center"
-            android:padding="16dp"
-            android:text="DATA ANALYTICS"
-            android:textColor="@color/text_primary"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <!-- Current Status Card -->
-        <TextView
-            android:id="@+id/textview_first"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/brutal_card_background"
-            android:padding="20dp"
-            android:text="LOADING SENSOR DATA..."
-            android:textColor="@color/text_primary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <!-- Chart Container -->
+        <!-- Title Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/brutal_card_background"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/soft_card_background"
+            android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="24dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="HISTORICAL DATA CHART"
+                android:text="Data Analytics"
+                style="@style/SoftTitle" />
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Historical sensor data and trends"
+                style="@style/SoftSubtitle" />
+
+        </LinearLayout>
+
+        <!-- Current Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/soft_card_background"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Current Status"
                 android:textColor="@color/text_primary"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+                android:fontFamily="sans-serif-medium" />
+
+            <TextView
+                android:id="@+id/textview_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loading sensor data..."
+                style="@style/SoftBody"
+                android:lineSpacingExtra="2dp" />
+
+        </LinearLayout>
+
+        <!-- Chart Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/soft_card_background"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Historical Data"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/line_chart"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:background="@color/brutal_white" />
+                android:background="@color/bg_surface" />
 
         </LinearLayout>
 
-        <!-- Button -->
+        <!-- Refresh Button -->
         <Button
             android:id="@+id/button_first"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/brutal_button_primary"
-            android:text="REFRESH DATA"
-            android:textColor="@color/text_secondary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/soft_button_primary"
+            android:text="Refresh Data"
+            android:textColor="@color/text_on_primary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
 
         <!-- Info Card -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/brutal_card_background"
+            android:background="@drawable/soft_card_background"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:gravity="center"
-                android:text="SYSTEM INFO"
+                android:text="System Information"
                 android:textColor="@color/text_primary"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
 
             <TextView
                 android:id="@+id/info_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="STREET LIGHT MONITORING SYSTEM\n\n• BLUE LINE: LIGHT SENSOR READINGS\n• RED LINE: STATUS (SCALED X1000)\n• STATUS: 0=OFF, 1=ON, 2=FLICKER\n• DATA UPDATES EVERY 30 SECONDS\n• NOTIFICATIONS ON STATUS CHANGE"
-                android:textColor="@color/text_primary"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+                android:text="Street Light Monitoring System\n\n• Real-time sensor readings\n• Historical trend analysis\n• Automatic status detection\n• Push notifications for changes"
+                style="@style/SoftBody" />
 
         </LinearLayout>
 

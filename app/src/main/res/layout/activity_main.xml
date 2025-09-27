@@ -3,44 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/bg_primary"
     android:orientation="vertical">
 
-    <!-- Neo-Brutalist Toolbar -->
+    <!-- Soft Modern Header -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#000000"
+        android:layout_height="80dp"
+        android:background="@color/soft_primary"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:elevation="4dp">
 
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="STREET LIGHT MONITOR"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:text="Street Light Monitor"
+            android:textColor="@color/text_on_primary"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-medium" />
 
-        <TextView
-            android:id="@+id/toolbar_status"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FF0000"
-            android:paddingStart="8dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="4dp"
-            android:text="LOADING"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:layout_height="32dp"
+            android:background="@drawable/status_off_background"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <TextView
+                android:id="@+id/toolbar_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textColor="@color/text_on_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -48,7 +52,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_margin="16dp">
 
         <fragment
             android:id="@+id/nav_host_fragment"
@@ -63,43 +68,35 @@
     <!-- Bottom Navigation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#000000"
-        android:orientation="horizontal">
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF" />
+        android:layout_height="wrap_content"
+        android:background="@color/bg_secondary"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:elevation="8dp">
 
         <Button
             android:id="@+id/btn_analytics"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="#0000FF"
-            android:text="ANALYTICS"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF" />
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/soft_button_primary"
+            android:text="Analytics"
+            android:textColor="@color/text_on_primary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
 
         <Button
             android:id="@+id/btn_status"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="#FF8800"
-            android:text="STATUS"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+            android:layout_marginStart="8dp"
+            android:background="@drawable/soft_button_secondary"
+            android:text="Live Status"
+            android:textColor="@color/text_on_primary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
 
     </LinearLayout>
 

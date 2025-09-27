@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Neo-Brutalist Color Palette -->
-    <color name="brutal_black">#000000</color>
-    <color name="brutal_white">#FFFFFF</color>
-    <color name="brutal_red">#FF0000</color>
-    <color name="brutal_green">#00FF00</color>
-    <color name="brutal_yellow">#FFFF00</color>
-    <color name="brutal_blue">#0000FF</color>
-    <color name="brutal_orange">#FF8800</color>
-    
-    <!-- Status Colors -->
-    <color name="status_off">#FF0000</color>
-    <color name="status_on">#00FF00</color>
-    <color name="status_flicker">#FFFF00</color>
+    <!-- Soft Modern Color Palette -->
+    <color name="soft_primary">#6B73FF</color>
+    <color name="soft_secondary">#9C88FF</color>
+    <color name="soft_accent">#FF6B9D</color>
     
     <!-- Background Colors -->
-    <color name="bg_primary">#FFFFFF</color>
-    <color name="bg_secondary">#F0F0F0</color>
+    <color name="bg_primary">#DDE1FF</color>
+    <color name="bg_secondary">#FFFFFF</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_surface">#F5F7FA</color>
+    
+    <!-- Status Colors (Soft) -->
+    <color name="status_off">#FF6B6B</color>
+    <color name="status_on">#51CF66</color>
+    <color name="status_flicker">#FFD43B</color>
     
     <!-- Text Colors -->
-    <color name="text_primary">#000000</color>
-    <color name="text_secondary">#FFFFFF</color>
+    <color name="text_primary">#2E3A59</color>
+    <color name="text_secondary">#6C757D</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_muted">#ADB5BD</color>
+    
+    <!-- Border and Shadow -->
+    <color name="border_light">#E9ECEF</color>
+    <color name="shadow_color">#1A000000</color>
+    <color name="blue_muted">#6B9BFF</color>
 </resources>
