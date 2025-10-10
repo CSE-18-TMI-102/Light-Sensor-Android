@@ -59,12 +59,22 @@ class FirstFragment : Fragment() {
         binding.lineChart.apply {
             description.isEnabled = false
             setTouchEnabled(true)
-            isDragEnabled = true
+            setDragEnabled(true)
             setScaleEnabled(true)
             setPinchZoom(true)
             setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.text_muted))
 
-            // Neo-brutalist chart styling
+            // Enable scrolling
+            isDoubleTapToZoomEnabled = true
+
+            // Set visible range (show only 20 data points at a time)
+            setVisibleXRangeMaximum(20f)
+            setVisibleXRangeMinimum(5f)
+
+            // Move to the latest data (right side)
+            moveViewToX(0f)
+
+            // Chart styling
             xAxis.apply {
                 position = XAxis.XAxisPosition.BOTTOM
                 setDrawGridLines(true)
@@ -75,6 +85,10 @@ class FirstFragment : Fragment() {
                 textColor = ContextCompat.getColor(requireContext(), R.color.text_primary)
                 textSize = 10f
                 typeface = Typeface.MONOSPACE
+
+                // Important for scrolling
+                granularity = 1f
+                setAvoidFirstLastClipping(true)
             }
 
             axisLeft.apply {
@@ -178,9 +192,8 @@ class FirstFragment : Fragment() {
             val status = feed.field3?.toFloatOrNull() ?: 0f
 
             lightEntries.add(Entry(index.toFloat(), lightLevel))
-            statusEntries.add(Entry(index.toFloat(), status * 1000)) // Scale status for visibility
+            statusEntries.add(Entry(index.toFloat(), status * 1000))
 
-            // Format time for x-axis
             val timeLabel = try {
                 val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault()).parse(feed.created_at)
                 SimpleDateFormat("HH:mm", Locale.getDefault()).format(date)
@@ -190,11 +203,10 @@ class FirstFragment : Fragment() {
             labels.add(timeLabel)
         }
 
-        // Neo-brutalist chart styling
         val lightDataSet = LineDataSet(lightEntries, "LIGHT LEVEL").apply {
-            color = "#FF5733".toColorInt()
+            color = ContextCompat.getColor(requireContext(), R.color.blue_muted)
             setCircleColor(ContextCompat.getColor(requireContext(), R.color.blue_muted))
-            lineWidth = 4f // Thicker lines
+            lineWidth = 4f
             circleRadius = 5f
             setDrawCircleHole(false)
             valueTextSize = 10f
@@ -205,7 +217,7 @@ class FirstFragment : Fragment() {
         val statusDataSet = LineDataSet(statusEntries, "STATUS (X1000)").apply {
             color = ContextCompat.getColor(requireContext(), R.color.status_off)
             setCircleColor(ContextCompat.getColor(requireContext(), R.color.status_off))
-            lineWidth = 4f // Thicker lines
+            lineWidth = 4f
             circleRadius = 5f
             setDrawCircleHole(false)
             valueTextSize = 10f
@@ -219,7 +231,11 @@ class FirstFragment : Fragment() {
             data = lineData
             xAxis.valueFormatter = IndexAxisValueFormatter(labels)
             xAxis.granularity = 1f
-            invalidate() // Refresh chart
+
+            // Move view to show latest data (rightmost)
+            moveViewToX(feeds.size.toFloat())
+
+            invalidate()
         }
     }
 
