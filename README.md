@@ -25,6 +25,10 @@ Soft color palette with Material Design
 Clean, intuitive interface
 Smooth animations and transitions
 
+![WhatsApp Image 2025-11-02 at 14 36 33](https://github.com/user-attachments/assets/55f840d8-4caa-4d9b-a4e0-79ecc4f0a1c3)
+![WhatsApp Image 2025-11-02 at 14 36 32](https://github.com/user-attachments/assets/5fd7e57a-5b0f-4c96-8d80-be9eb56b77d6)
+
+
 ### Tech Stack
 
 Language: Kotlin
